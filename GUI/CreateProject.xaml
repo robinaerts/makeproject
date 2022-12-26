@@ -1,0 +1,73 @@
+﻿<Window x:Class="Robyte_Dev.CreateProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Robyte_Dev"
+        mc:Ignorable="d"
+        Title="Robyte - Dev Center" Height="900" Width="1600" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="20" Grid.Row="1">
+            <StackPanel Margin="20" Width="500" Orientation="Horizontal">
+                <Label Content="Project name: " HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0"/>
+                <TextBox Name="projectNameTextbox" Width="300" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0"/>
+            </StackPanel>
+            <StackPanel Margin="20" Width="500" Orientation="Horizontal">
+                <Label Content="Add to existing project " HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0"/>
+                <ComboBox Width="100" Margin="20,0,0,0" Name="existingProjectsDropbox">
+                    <ComboBoxItem/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <GroupBox Header="What kind of project?" Margin="20" Width="500">
+                <StackPanel  Orientation="Vertical">
+                    <Label Content="Web:" FontWeight="Bold"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="Basic web project (HTML, CSS, JS)"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="Reactjs project"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="REST-API  (Nodejs with Express)"/>
+                    <Label Content="Mobile:" FontWeight="Bold"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="Android project (Flutter)"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="IOS project (Swift)"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="React native"/>
+                    <Label Content="Desktop:" FontWeight="Bold"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="WPF (C#)"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="Elektronjs (JS)"/>
+                    <RadioButton Checked="RadioButton_Checked" Margin="10,0,5,5" Content="Python"/>
+            </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Use extra technologies?" Margin="20" Width="500">
+                <StackPanel Name="extraTechnologies"  Orientation="Vertical">
+                    <Label Content="Databases:" FontWeight="Bold"/>
+                    <CheckBox Content="MongoDB"/>
+                    <CheckBox Content="MySQL"/>
+                    <Label Content="Javascript Libraries:" FontWeight="Bold"/>
+                    <CheckBox Content="Next"/>
+                    <CheckBox Content="Chartjs"/>
+                    <CheckBox Content="Material UI"/>
+                    <CheckBox Content="Stripejs"/>
+                    <Label Content="CSS Frameworks:" FontWeight="Bold"/>
+                    <CheckBox Content="Sass"/>
+                    <CheckBox Content="Tailwind CSS"/>
+                    <Label Content="Python Frameworks:" FontWeight="Bold"/>
+                    <CheckBox Content="Django"/>
+                    <Label Content="Extra:" FontWeight="Bold"/>
+                    <CheckBox Content="Firebase"/>
+                </StackPanel>
+            </GroupBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Margin="5" Padding="5" Content="Create Project" Click="CreateProject_Click"/>
+                <Button Margin="5"  Padding="5" Content="Cancel" Click="HomeBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <Label Content="Create new project" Grid.Row="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Home" Height="24" Width="64" Click="HomeBtn_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,50,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Robyte_Dev</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Copyright>Robyte</Copyright>
+    <Description>Easily manage and create new programming projects!</Description>
+    <ApplicationIcon>rsc\robyte.ico</ApplicationIcon>
+    <SignAssembly>False</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="rsc\robyte.ico" />
+  </ItemGroup>
+
+</Project>

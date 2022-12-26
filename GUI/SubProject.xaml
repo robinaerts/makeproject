@@ -1,0 +1,23 @@
+﻿<Window x:Class="Robyte_Dev.SubProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Robyte_Dev"
+        mc:Ignorable="d"
+        Title="Robyte - Dev Center" Height="900" Width="1600" WindowState="Maximized" Icon="C:\Users\robin.aerts\OneDrive - Sint-Andreasinstituut\Documents\@ Privé\1. Programming\Robyte-Dev\rsc\robyte.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Name="projectname" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center">Project</Label>
+        <Button Click="CreateProject_Click" Grid.Row="2" Width="200" Height="50">Create new project</Button>
+        <WrapPanel Orientation="Horizontal" Name="subprojects" Grid.Row="1"/>
+        <Button Content="Home" Height="44" Width="64" Click="HomeBtn_Click" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,50,0"/>
+    </Grid>
+</Window>
