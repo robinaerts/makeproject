@@ -1,1 +1,0 @@
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/robinaerts/makeproject/main/makeproject.ps1?token=GHSAT0AAAAAABZXI6AJSGTKJDFNQPSNW6FYY5DQ3YA'))

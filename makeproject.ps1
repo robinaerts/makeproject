@@ -64,13 +64,16 @@ function ChooseTask {
 function createProject {
     $path = askPath
     $project = chooseProject
-    $projectName = read-host "Project name" -replace " ", ""
+    $projectNameInp = read-host "Project name"
+    $projectName = ($projectNameInp -replace " ", "").ToLower()
+
+    Clear-Host
 
     switch ($project) {
         0 { createBasicProject $projectName }
-        1 { createNextProject $projectName }
-        2 { createNextProject $projectName }
-        3 { createReactProject $projectName }
+        1 { createNextProject $projectName "ts" }
+        2 { createNextProject $projectName "js" }
+        3 { createReactProject $projectName "js" }
         4 { createThreeProject $projectName }
         5 { createExpressProject $projectName }
         6 { createElectronProject $projectName }
@@ -92,6 +95,154 @@ function createBasicProject {
     $null = New-Item -ItemType File -Path . -Name "app.js"
     write-host "Done! Starting VS Code..."
     code .
+}
+
+function createNextProject {
+    param($projectName, $language)
+    write-host "Creating NextJS project..."
+    try {
+        npx create-next-app $projectName --$language
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code $projectName
+}
+
+function createReactProject {
+    param($projectName, $language)
+    write-host "Creating ReactJS project..."
+    try {
+        npx create-react-app $projectName --$language
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code $projectName
+}
+
+function createThreeProject {
+    
+}
+
+function createExpressProject {
+    param($projectName)
+    write-host "Creating Express project..."
+    try {
+        npx express-generator $projectName
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code $projectName
+}
+
+function createElectronProject {
+    param($projectName)
+    write-host "Creating Electron project..."
+    try {
+        npx create-electron-app $projectName
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code $projectName
+}
+
+function createCSharpProject {
+    param($projectName)
+    write-host "Creating C# project..."
+    try {
+        dotnet new console -o $projectName
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code $projectName
+}
+
+function createCPlusPlusProject {
+    param($projectName)
+    write-host "Creating C++ project..."
+    try {
+        mkdir $projectName
+        Set-Location $projectName
+        mkdir src
+        Set-Location src
+        New-Item -ItemType File -Path . -Name "main.cpp"
+        Set-Location ..
+        New-Item -ItemType File -Path . -Name "CMakeLists.txt"
+        New-Item -ItemType File -Path . -Name "README.md"
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code .
+}
+
+function createPythonProject {
+    param($projectName)
+    write-host "Creating Python project..."
+    try {
+        mkdir $projectName
+        Set-Location $projectName
+        New-Item -ItemType File -Path . -Name "main.py"
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code .
+}
+
+function createReactNativeProject {
+    param($projectName)
+    write-host "Creating React Native project..."
+    try {
+        npx react-native init $projectName
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code $projectName
+}
+
+function createFlutterProject {
+    param($projectName)
+    write-host "Creating Flutter project..."
+    try {
+        flutter create $projectName
+    }
+    catch {
+        write-host "Something went wrong, please try again"
+        createProject
+    }
+    Clear-Host
+    write-host "Done! Starting VS Code..."
+    code $projectName
 }
 
 function askPath {
@@ -128,7 +279,7 @@ function chooseProject {
     write-host "[11] Flutter"
 
     $choice = read-host "Choice"
-    if ($choice -in 0...11) {
+    if ($choice -in 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) {
         return $choice
     }
     else {
