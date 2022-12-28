@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qQnpe0+KwxE7EHT3FVmVXK/Shag74UUBoKVSMVThdUvAMwjDSk2szETbJgXzcLisD8fyylt3O1bzKA7xJ3aklw==",
+  "dgSpecHash": "QYDyHj5VXgCI5FpMNxgTRdIbosuHdZyOyQfgXp26GA60JNC3mQEA8YmKC8qU75kpO2/hDS/YWC0lDW54O2I8Aw==",
   "success": true,
   "projectFilePath": "C:\\Users\\robin\\OneDrive - Sint-Andreasinstituut\\Desktop\\makeproject\\GUI\\Robyte-Dev.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\robin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
-    "C:\\Users\\robin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\robin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\robin\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

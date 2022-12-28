@@ -108,8 +108,11 @@ function createNextProject {
         createProject
     }
     Clear-Host
+    additionalNPM
+
+    Set-Location $projectName
     write-host "Done! Starting VS Code..."
-    code $projectName
+    code .
 }
 
 function createReactProject {
@@ -123,8 +126,11 @@ function createReactProject {
         createProject
     }
     Clear-Host
+    additionalNPM
+
+    Set-Location $projectName
     write-host "Done! Starting VS Code..."
-    code $projectName
+    code .
 }
 
 function createThreeProject {
@@ -142,8 +148,11 @@ function createExpressProject {
         createProject
     }
     Clear-Host
+    additionalNPM
+
+    Set-Location $projectName
     write-host "Done! Starting VS Code..."
-    code $projectName
+    code .
 }
 
 function createElectronProject {
@@ -157,8 +166,11 @@ function createElectronProject {
         createProject
     }
     Clear-Host
+    additionalNPM
+
+    Set-Location $projectName
     write-host "Done! Starting VS Code..."
-    code $projectName
+    code .
 }
 
 function createCSharpProject {
@@ -226,8 +238,11 @@ function createReactNativeProject {
         createProject
     }
     Clear-Host
+    additionalNPM
+
+    Set-Location $projectName
     write-host "Done! Starting VS Code..."
-    code $projectName
+    code .
 }
 
 function createFlutterProject {
@@ -243,6 +258,18 @@ function createFlutterProject {
     Clear-Host
     write-host "Done! Starting VS Code..."
     code $projectName
+}
+
+function additionalNPM {
+    param($projectName)
+    write-host "Do you want to install additional NPM packages? (y/N)"
+    $inp = read-host
+    if ($inp -eq "y") {
+        write-host "What packages do you want to install? (separate with space)"
+        $packages = read-host
+        
+        npm install $packages.Replace('"', "")
+    }
 }
 
 function askPath {
